@@ -9,6 +9,18 @@ import { from } from 'rxjs';
 export class CoursesComponent implements OnInit {
 
   courses;
+  RightToLeft="rtl";
+  istActive="true";
+  content: any;
+
+  display = true;
+
+
+  onClick(){
+      console.log("Clicked!!!")
+      
+  }
+
 
   constructor(service:CoursesService) { 
     
