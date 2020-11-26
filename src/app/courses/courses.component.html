@@ -1,9 +1,11 @@
 <div class="row m-3" style="margin-top: 100px;">
     <div class="col-sm-4 col-xs border p-3 m-2 rounded text-center justify-content-center">
         <h3>Array den wir ausgeben hat {{courses.length}} Elemente</h3>
-        <ul>
+        <ul style="list-style: none;">
             <hr>
-            <li [attr.dir]="RightToLeft" *ngFor="let item of courses">{{item}}</li>
+            <li [attr.dir]="RightToLeft" *ngFor="let item of courses;even as istEven">
+                {{item}} <span *ngIf="istEven" class="bg-warning">Gerade</span>
+            </li>
         </ul>
         <!--Wenn istActive auf true gesetz, die Farbe wechseln
         Frage: Kann ich auf ein anderes Element zugreifen. Z.B die Farbe vom Parent
@@ -24,5 +26,16 @@
         <p class="p " *ngIf="display">Ich hätte es gerne so,<br> dass der Abschnitt nach dem click <br>unsichtbar wird</p>
         <button class="btn btn-success " (click)="display = !display">Verstecke den p</button>
     </div>
-    <app-pipes-c></app-pipes-c>
+    <div class="col-sm col-xs border p-3 m-2 rounded text-center justify-content-center">
+        <h3>Event Binding</h3>
+        <div class="form-group">
+            <label class="sr-only">Template Variable</label>
+            <input type="text" class="form-control" [(ngModel)]="content">
+        </div>
+        <p id="ausgabe">{{ content }}</p>
+        <p class="p " *ngIf="display">Ich hätte es gerne so,<br> dass der Abschnitt nach dem click <br>unsichtbar wird</p>
+        <button class="btn btn-success " (click)="display = !display">Verstecke den p</button>
+    </div>
+
+
 </div>

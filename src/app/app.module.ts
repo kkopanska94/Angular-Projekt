@@ -9,9 +9,10 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { DataBindingComponent } from './start-page/data-binding/data-binding/data-binding.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesService } from './courses.service';
-import { PipesCComponent } from './courses/pipes-c/pipes-c/pipes-c.component';
 import { TestPipePipe } from './test-pipe.pipe';
-import { DirectivesComponent } from './directives/directives.component';
+import { AbschnittsechsComponent } from './start-page/abschnittsechs/abschnittsechs.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +22,15 @@ import { DirectivesComponent } from './directives/directives.component';
     FooterComponent,
     DataBindingComponent,
     CoursesComponent,
-    PipesCComponent,
     TestPipePipe,
-    DirectivesComponent,
+    AbschnittsechsComponent,
+    
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule
   ],
   providers: [CoursesService],

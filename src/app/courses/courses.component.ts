@@ -12,7 +12,6 @@ export class CoursesComponent implements OnInit {
   RightToLeft="rtl";
   istActive="true";
   content: any;
-
   display = true;
 
 

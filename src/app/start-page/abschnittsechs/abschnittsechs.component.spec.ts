@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DirectivesComponent } from './directives.component';
+import { AbschnittsechsComponent } from './abschnittsechs.component';
 
-describe('DirectivesComponent', () => {
-  let component: DirectivesComponent;
-  let fixture: ComponentFixture<DirectivesComponent>;
+describe('AbschnittsechsComponent', () => {
+  let component: AbschnittsechsComponent;
+  let fixture: ComponentFixture<AbschnittsechsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DirectivesComponent ]
+      declarations: [ AbschnittsechsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DirectivesComponent);
+    fixture = TestBed.createComponent(AbschnittsechsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
-  imgUrl="./assets/images/grinch.jpg"
+  imgUrl="./assets/images/grinch.jpg";
+
   constructor() { }
 
   ngOnInit(): void {

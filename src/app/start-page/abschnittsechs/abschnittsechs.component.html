@@ -1,0 +1,45 @@
+<!--Hidden Property-->
+<div [hidden]="list.length==0" class=" well p-3 mb-2 bg-success text-white">
+    Hidden Property:Liste ist nicht leer</div>
+<div [hidden]="list.length > 0" class="well p-3 mb-2 bg-danger text-white">
+    Hidden Property:Liste ist leer</div>
+<!--Hidden Property-->
+<hr>
+<!--ng Switch Case (C#?)-->
+<div class="row">
+    <div class="col-sm border p-3 m-2 rounded">
+        <nav>
+            <div class="nav nav-tabs p-3" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link" [class.active]="viewMode=='ursprung'" (click)="viewMode='ursprung'">DER URSPRUNG</a>
+                <a class="nav-item nav-link" [class.active]="viewMode=='nachhaltigkeit'" (click)="viewMode='nachhaltigkeit'">NACHHALTIGKEIT</a>
+                <a class="nav-item nav-link" [class.active]="viewMode=='geschmack'" (click)="viewMode='geschmack'">GUTER GESCHMACK</a>
+            </div>
+        </nav>
+        <div class="tab-content p-3" [ngSwitch]="viewMode">
+            <div class="tab-pane fade show active p-4" *ngSwitchCase="'ursprung'">
+                <h3>Im Mittelpunkt steht der Mensch</h3>
+                <p>
+                    In der Kaffeehandel-Wertschöpfungskette stehen Menschen im Mittelpunkt. Eine gute Bohne ist das Ergebnis harter, handwerklicher Arbeit. Das Kaffeeprodukt kann also nur so gut sein wie die Menschen, die es angebaut, geerntet und veredelt haben. Je besser
+                    die Bedingungen unter denen der Kaffee produziert wird, desto besser das Ergebnis. Sowohl für Kunden als auch für die Erzeuger. Nur so kann Kaffee auch in Zukunft auf Augenhöhe gehandelt und vertreiben werden. Wir sind fest davon überzeugt,
+                    dass durch konsequent nachhaltiges Handeln nicht nur bessere Produkte möglich sind, sondern auch ein besseres Leben. Für alle.
+                </p>
+            </div>
+            <div class="tab-pane fade" *ngSwitchCase="'nachhaltigkeit'">
+                <h3>DIRECT TRADE - NACHHALTIGKEIT IN UNSERER PHILOSOPHIE</h3>
+                <p>
+                    Wir verpflichten uns als Mitglied der deutschen Röstergilde ausschließlich Rohkaffee zu fairen Preisen und höchster Qualität einzukaufen. Somit sichern wir den beschriebenen Prozess „vom Anbau bis zur Verpackung“ und unterstützen Kaffeebauern und deren
+                    Familien mit dauerhaft hohen Einkaufspreisen und bei einer selbstbestimmten und abgesicherten Lebensführung. Wir verpflichten uns als Mitglied der deutschen Röstergilde ausschließlich Rohkaffee zu fairen Preisen und höchster Qualität
+                    einzukaufen. Somit sichern wir den beschriebenen Prozess „vom Anbau bis zur Verpackung“ und unterstützen Kaffeebauern und deren Familien mit dauerhaft hohen Einkaufspreisen und bei einer selbstbestimmten und abgesicherten Lebensführung.
+                </p>
+            </div>
+            <div class="tab-pane fade" *ngSwitchCase="'geschmack'">
+                <h3>HANDWERKLICHE RÖSTUNG</h3>
+                <p>
+                    Seit einem halben Jahrhundert verrichtet unsere gusseiserne Probat Röstmaschine UG-n jetzt schon treu ihre Dienste. So wird der Kaffee in unserer Rösterei im Prinzip auch heute noch geröstet wie vor 50 Jahren. Das langsame und schonende Langzeit-Röstverfahren
+                    ermöglicht eine optimale Bildung der Aromen. Dadurch kann jede Kaffeebohne ihr gesamtes naturgegebenes Geschmackspotential optimal entfalten.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ng Switch Case ( C#?)-->
