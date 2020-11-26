@@ -1,0 +1,22 @@
+<div class="row text-center justify-content-center m-2">
+    <h3>Template driven Form mit der Ausgabe des Obiektes in Konsole</h3>
+</div>
+<div class="row border bg-secondary p-3 m-3 rounded text-center  justify-content-center">
+    <form class="col-sm-3 border p-3 m-2 rounded text-center justify-content-center bg-white">
+        <div class="form-group">
+            <label for="vorname">Vorname</label>
+            <input type="text" class="form-control" ngModel name="vorname" #vorname="ngModel" placeholder="Vorname" (change)="log(vorname)">
+            <div class="alert alert-danger" *ngIf="!(vorname.value)">Vorname erforderlich</div>
+        </div>
+        <div class="form-group">
+            <label for="nachname">Nachname</label>
+            <input type="text" class="form-control" ngModel name="nachname" #nachname="ngModel" placeholder="Nachname" (change)="log(nachname)">
+            <div class="alert alert-danger" *ngIf="!(nachname.value)">Nachname erforderlich</div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Kommentar</label>
+            <textarea class="form-control" ngModel name="kommentar" #kommentar="ngModel" (change)="log(kommentar)" rows="5"></textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>

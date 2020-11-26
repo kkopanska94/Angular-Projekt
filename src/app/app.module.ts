@@ -12,6 +12,7 @@ import { CoursesService } from './courses.service';
 import { TestPipePipe } from './test-pipe.pipe';
 import { AbschnittsechsComponent } from './start-page/abschnittsechs/abschnittsechs.component';
 import { CommonModule } from '@angular/common';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CommonModule } from '@angular/common';
     CoursesComponent,
     TestPipePipe,
     AbschnittsechsComponent,
+    ContactFormComponent,
     
   
   ],
