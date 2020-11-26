@@ -2,16 +2,24 @@
     <h3>Template driven Form mit der Ausgabe des Obiektes in Konsole</h3>
 </div>
 <div class="row border bg-secondary p-3 m-3 rounded text-center  justify-content-center">
-    <form class="col-sm-3 border p-3 m-2 rounded text-center justify-content-center bg-white">
+    <form class="col-sm-3 border p-3 m-2 rounded text-center justify-content-center bg-white" #commentForm="ngForm" (ngSubmit)="submit(commentForm)">
         <div class="form-group">
             <label for="vorname">Vorname</label>
-            <input type="text" class="form-control" ngModel name="vorname" #vorname="ngModel" placeholder="Vorname" (change)="log(vorname)">
-            <div class="alert alert-danger" *ngIf="!(vorname.value)">Vorname erforderlich</div>
+            <input type="text" class="form-control" pattern="Max" minlength="3" maxlength="10" ngModel name="vorname" #vorname="ngModel" placeholder="Vorname" (change)="log(vorname)">
+            <div class="alert alert-danger" *ngIf="vorname.touched">
+                <p *ngIf="!(vorname.value)">Vorname erforderlich</p>
+                <p *ngIf="vorname.errors.minlength">Vorname zu kurz</p>
+                <p *ngIf="vorname.errors.pattern">Vorname entspricht nicht dem Pattern</p>
+            </div>
         </div>
         <div class="form-group">
             <label for="nachname">Nachname</label>
-            <input type="text" class="form-control" ngModel name="nachname" #nachname="ngModel" placeholder="Nachname" (change)="log(nachname)">
-            <div class="alert alert-danger" *ngIf="!(nachname.value)">Nachname erforderlich</div>
+            <input type="text" class="form-control" pattern="Müller" minlength="3" maxlength="10" ngModel name="nachname" #nachname="ngModel" placeholder="Nachname" (change)="log(nachname)">
+            <div class="alert alert-danger" *ngIf="nachname.touched">
+                <p *ngIf="!(nachname.value)">Nachname erforderlich</p>
+                <p *ngIf="nachname.errors.minlength">Nachname zu kurz, muss länger als {{nachname.errors.minlength.requiredLength}} sein.</p>
+                <p *ngIf="nachname.errors.pattern">Nachname entspricht nicht dem Pattern {{nachname.errors.pattern}} </p>
+            </div>
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Kommentar</label>
