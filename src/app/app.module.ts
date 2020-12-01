@@ -1,4 +1,5 @@
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +14,14 @@ import { TestPipePipe } from './test-pipe.pipe';
 import { AbschnittsechsComponent } from './start-page/abschnittsechs/abschnittsechs.component';
 import { CommonModule } from '@angular/common';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { PostsComponent } from './posts/posts.component';
+import { Routes, RouterModule } from '@angular/router';
 
+
+const routes: Routes = [
+  { path: 'start-page', component: StartPageComponent },
+  { path: 'contact-form', component: ContactFormComponent },
+];
 
 @NgModule({
   declarations: [
@@ -26,15 +34,21 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     TestPipePipe,
     AbschnittsechsComponent,
     ContactFormComponent,
-    
-  
+    PostsComponent
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+ 
+
   ],
+  exports: [RouterModule],
   providers: [CoursesService],
   bootstrap: [AppComponent]
 })
